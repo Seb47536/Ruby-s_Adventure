@@ -163,7 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Standalone: com.DefaultCompany.-2DBeginnerProject
+    Standalone: com.DefaultCompany.Ruby-s-Adventure
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -916,7 +916,7 @@ PlayerSettings:
   cloudProjectId: bd3b85f3-91d2-4b0b-a67c-a8cb57170d8d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: Ruby's_Adventure
   organizationId: sebysuke
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
