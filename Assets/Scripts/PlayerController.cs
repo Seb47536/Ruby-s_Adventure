@@ -14,9 +14,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 position = transform.position;
-        position.x = position.x + 0.1f;
-        transform.position = position;
         float horizontal = 0.0f;
         if (Keyboard.current.leftArrowKey.isPressed)
         {
@@ -27,5 +24,12 @@ public class PlayerController : MonoBehaviour
             horizontal = 1.0f;
         }
         Debug.Log(horizontal);
+        
+        Vector2 position = transform.position;
+        position.x = position.x + 0.1f * horizontal;
+        transform.position = position;
+
+        
+        
     }
 }
