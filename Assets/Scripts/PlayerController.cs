@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour
 {
 public InputAction MoveAction;
 private Rigidbody2D rigidbody2d;
-public int maxHealth = 5;
-private int currentHealth = 1;
+public int maxHealth = 5; 
+public int health {get {return currentHealth;}}
+private int currentHealth = 5;
 private Vector2 move;
 public float speed = 3.0f;
     // Start is called before the first frame update
