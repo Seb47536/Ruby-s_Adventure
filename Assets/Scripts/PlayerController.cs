@@ -11,15 +11,20 @@ public InputAction MoveAction;
 private Rigidbody2D rigidbody2d;
 public int maxHealth = 5; 
 public int health {get {return currentHealth;}}
-private int currentHealth = 5;
+private int currentHealth;
 private Vector2 move;
 public float speed = 3.0f;
+public float timeInvincible = 2.0f;
+private bool isInvincible;
+private float damageCooldown;
+
+
     // Start is called before the first frame update
     void Start()
     {
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
-       // currentHealth = maxHealth;
+       currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -27,6 +32,14 @@ public float speed = 3.0f;
     {
         move = MoveAction.ReadValue<Vector2>();
         //Debug.Log(move);
+        if (isInvincible)
+        {
+            damageCooldown -= Time.deltaTime;
+            if (damageCooldown < 0)
+            {
+                isInvincible = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -37,6 +50,16 @@ public float speed = 3.0f;
 
     public void ChangeHealth (int amount)
     {
+        if (amount < 0)
+        {
+            if (isInvincible)
+            {
+                return;
+            }
+
+            isInvincible = true;
+            damageCooldown = timeInvincible;
+        }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
