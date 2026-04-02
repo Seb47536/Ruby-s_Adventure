@@ -10180,21 +10180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7074922919240980802, guid: 39c153930aaa84f429b2bfb6d4956f90,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7074922919240980802, guid: 39c153930aaa84f429b2bfb6d4956f90,
-        type: 3}
-      propertyPath: vertical
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7643930553313805419, guid: 39c153930aaa84f429b2bfb6d4956f90,
         type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 5391564af0d49744a937ab838c651555, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10478,6 +10468,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 932401805}
   - {fileID: 3933886388296239070}
+  - {fileID: 7175149659883731341}
   - {fileID: 31468658}
   - {fileID: 3799286591743091954}
   - {fileID: 146052106798862909}
@@ -10508,4 +10499,3 @@ SceneRoots:
   - {fileID: 1249906172}
   - {fileID: 1229024914}
   - {fileID: 7558010331676724177}
-  - {fileID: 7175149659883731341}

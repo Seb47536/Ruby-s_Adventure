@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 {
 public InputAction MoveAction;
 private Rigidbody2D rigidbody2d;
+private Animator animator;
+private Vector2 moveDirection = new Vector2(1, 0);
 public int maxHealth = 5; 
 public int health {get {return currentHealth;}}
 private int currentHealth;
@@ -24,13 +26,19 @@ private float damageCooldown;
     {
         MoveAction.Enable();
         rigidbody2d = GetComponent<Rigidbody2D>();
-       currentHealth = maxHealth;
+        currentHealth = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         move = MoveAction.ReadValue<Vector2>();
+        if (!Mathf.Approximately(move.x, 0) || !Mathf.Approximately(move.y, 0.0f))
+        {
+            moveDirection.Set(move.x, move.y);
+            moveDirection.Normalize();
+        }
         //Debug.Log(move);
         if (isInvincible)
         {
