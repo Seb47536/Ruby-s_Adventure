@@ -1,8 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="NPCDialogue" src="project://database/Assets/NPCDialogue.uxml?fileID=9197481963319205126&amp;guid=8f9d43844ce3b5d449a8f1a839d2a22c&amp;type=3#NPCDialogue" />
     <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; flex-direction: column; background-image: url(&quot;project://database/Assets/UnityTechnologies/StarterAsset/Art/Ruby/UI/UIHealthFrame.png?fileID=21300000&amp;guid=e04807cd45105ec409b00463fe6ab7b1&amp;type=3#UIHealthFrame&quot;); width: 309px; height: 147px; -unity-background-scale-mode: scale-to-fit; position: relative;">
         <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; position: absolute; height: 51px; width: 167px; top: 44px; left: 128px;">
             <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UnityTechnologies/StarterAsset/Art/Ducko/UI/UIHealthBar.png?fileID=21300000&amp;guid=39fe000f2b6d9d04b93d6a76310e29aa&amp;type=3#UIHealthBar&quot;); width: 170px;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/UnityTechnologies/StarterAsset/Art/Ruby/UI/CharacterPortrait.png?fileID=2800000&amp;guid=374193bc7008fa34ab9b2bbca376937b&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; height: 158px; width: 84px; position: absolute; top: -6px; left: 32px;" />
+    <ui:Instance template="NPCDialogue" name="NPCDialogue" style="position: absolute; left: 10%; top: 70%; right: 10%; bottom: 0%;" />
 </ui:UXML>
