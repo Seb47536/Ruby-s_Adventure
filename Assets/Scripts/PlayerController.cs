@@ -19,7 +19,7 @@ public float speed = 3.0f;
 public float timeInvincible = 2.0f;
 private bool isInvincible;
 private float damageCooldown;
-
+public GameObject projectilePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +52,11 @@ private float damageCooldown;
                 isInvincible = false;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Launch();
+        }
     }
 
     private void FixedUpdate()
@@ -75,5 +80,13 @@ private float damageCooldown;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         UIHandler.instance.SetHealthValue(currentHealth/(float)maxHealth);
+    }
+
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(moveDirection, 300);
+        animator.SetTrigger("Launch");
     }
 }
