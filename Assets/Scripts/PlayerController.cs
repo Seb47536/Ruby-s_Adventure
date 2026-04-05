@@ -21,6 +21,7 @@ private bool isInvincible;
 private float damageCooldown;
 public GameObject projectilePrefab;
 public InputAction talkAction;
+private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public InputAction talkAction;
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
         talkAction.Enable();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -109,5 +111,10 @@ public InputAction talkAction;
                 UIHandler.instance.DisplayDialogue();
             }
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
